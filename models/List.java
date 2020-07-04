@@ -53,12 +53,9 @@ public class List {
         if (isEmpty()) {
             setFirst(node);
         } else {
-            Node aux = first;
-            while (aux.getNext() != null) {
-                aux = aux.getNext();
-            }
-            aux.setNext(node);
+            last.setNext(node);
         }
+        setLast(node);
     }
 
     public int removeLast() {
