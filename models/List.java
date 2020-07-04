@@ -2,9 +2,11 @@ package models;
 
 public class List {
     private Node first;
+    private Node last;
 
     public List() {
         first = null;
+        last = null;
     }
 
     public Node getFirst() {
@@ -15,18 +17,33 @@ public class List {
         this.first = first;
     }
 
+    public Node getLast() {
+        return last;
+    }
+
+    public void setLast(Node last) {
+        this.last = last;
+    }
+
     public boolean isEmpty() {
         return first == null;
     }
 
     public void insertFirst(int value) {
         Node node = new Node(value);
-        if (!isEmpty()) node.setNext(first);
+        if (!isEmpty()) {
+            node.setNext(first);
+        } else {
+            setLast(node);
+        }
         setFirst(node);
     }
 
     public int removeFirst() {
         int value = first.getValue();
+        if (getFirst() == getLast()) {
+            setLast(null);
+        }
         setFirst(first.getNext());
         return value;
     }
