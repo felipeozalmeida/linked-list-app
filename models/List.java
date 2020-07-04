@@ -31,10 +31,10 @@ public class List {
 
     public void insertFirst(int value) {
         Node node = new Node(value);
-        if (!isEmpty()) {
-            node.setNext(first);
-        } else {
+        if (isEmpty()) {
             setLast(node);
+        } else {
+            node.setNext(first);
         }
         setFirst(node);
     }
