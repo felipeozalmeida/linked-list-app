@@ -41,7 +41,7 @@ public class List {
 
     public int removeFirst() {
         int value = first.getValue();
-        if (getFirst() == getLast()) {
+        if (first == last) {
             setLast(null);
         }
         setFirst(first.getNext());
