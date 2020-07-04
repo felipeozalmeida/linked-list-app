@@ -59,18 +59,18 @@ public class List {
     }
 
     public int removeLast() {
-        int value;
+        int value = last.getValue();
 
         if (first.getNext() == null) {
-            value = first.getValue();
             setFirst(null);
+            setLast(null);
         } else {
             Node aux = first;
-            while (aux.getNext().getNext() != null) {
+            while (aux.getNext() != last) {
                 aux = aux.getNext();
             }
-            value = aux.getNext().getValue();
             aux.setNext(null);
+            setLast(aux);
         }
 
         return value;
