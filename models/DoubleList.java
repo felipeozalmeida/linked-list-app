@@ -19,6 +19,20 @@ public class DoubleList {
         return first == null;
     }
 
+    public int getLength() {
+        int count = 0;
+
+        if (!isEmpty()) {
+            DoubleNode aux = first;
+            do {
+                count++;
+                aux = aux.getNext();
+            } while (aux != first);
+        }
+
+        return count;
+    }
+
     public void insertFirst(int value) {
         DoubleNode node = new DoubleNode(value);
         if (isEmpty()) {
