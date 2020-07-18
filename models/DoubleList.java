@@ -45,7 +45,19 @@ public class DoubleList {
         return value;
     }
 
-    // TODO: add insertLast
+    public void insertLast(int value) {
+        DoubleNode node = new DoubleNode(value);
+        if (isEmpty()) {
+            setFirst(node);
+            node.setBack(node);
+            node.setNext(node);
+        } else {
+            node.setBack(getFirst().getBack());
+            node.setNext(getFirst());
+            node.getNext().setBack(node);
+            node.getBack().setNext(node);
+        }
+    }
 
     public int removeLast() {
         int value = first.getBack().getValue();
