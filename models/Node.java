@@ -23,4 +23,9 @@ public class Node {
     public void setNext(Node next) {
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        return Integer.toString(value);
+    }
 }
