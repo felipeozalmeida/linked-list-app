@@ -20,12 +20,16 @@ public class DoublyLinkedListApp {
             listOne.insertLast(i);
         }
 
-        System.out.println(listOne);
+        System.out.println("\n");
+        System.out.println("List: " + listOne);
+        System.out.println("Length: " + listOne.getLength());
 
         while (!listOne.isEmpty()) {
+            System.out.println("\n");
             System.out.println(listOne.removeLast() + " removed.");
-            System.out.println(listOne);
-            System.out.println(listOne.getFirst());
+            System.out.println("List: " + listOne);
+            System.out.println("Length: " + listOne.getLength());
+            System.out.println("First: " + listOne.getFirst());
         }
     }
 }
