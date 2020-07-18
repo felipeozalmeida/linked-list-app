@@ -45,6 +45,19 @@ public class DoubleList {
         return value;
     }
 
+    // TODO: add insertLast
+
+    public int removeLast() {
+        int value = first.getBack().getValue();
+        if (first.getNext() == first) {
+            setFirst(null);
+        } else {
+            first.setBack(first.getBack().getBack());
+            first.getBack().setNext(first);
+        }
+        return value;
+    }
+
     @Override
     public String toString() {
         String s = "";
